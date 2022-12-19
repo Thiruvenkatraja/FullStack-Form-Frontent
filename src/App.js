@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Form from "./Components/Form";
+// import { useState } from "react";
+// import Filter from "./Components/Filter";
+import EnquiryList from "./Components/Enquiry-List";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Sidebar from "./Components/Sidebar";
+import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       
+      
+        <Router>
+        <Sidebar/>
+        <Routes>
+          <Route path='/' />
+          <Route path="/form" element={<Form />} />
+          <Route path="/enqlist" element={<EnquiryList />} />
+         </Routes>
+         
+        </Router>
+      
+      
     </div>
   );
 }
