@@ -30,7 +30,7 @@ main {
 .top-bar {
   background: rgb(0, 7, 61);
   width: 100vw;
-  height: 10vh;
+  height: 4rem;
   position: fixed;
   left: 2.5rem;
 }
