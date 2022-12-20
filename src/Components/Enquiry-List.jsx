@@ -17,7 +17,7 @@ export default function EnquiryList() {
 
   const getData = () => {
     axios
-      .get("https://enq-form-api.onrender.com/enq")
+      .get("http://localhost:5000/enq")
       .then((res) => {
         setList(res.data);
         setAllVal(res.data);
