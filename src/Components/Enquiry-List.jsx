@@ -17,7 +17,7 @@ export default function EnquiryList() {
 
   const getData = () => {
     axios
-      .get("http://localhost:5000/enq")
+      .get("http://localhost:10000/enq")
       .then((res) => {
         setList(res.data);
         setAllVal(res.data);
