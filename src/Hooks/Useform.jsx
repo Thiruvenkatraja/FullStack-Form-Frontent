@@ -48,7 +48,7 @@ import axios from "axios";
     };
 
   
-  axios.post('http://localhost:5000/enq/EnquiryData', enqdata) 
+  axios.post('https://enq-form-api.onrender.com/EnquiryData', enqdata) 
     .then(res=>console.log(res.data))
         
 
