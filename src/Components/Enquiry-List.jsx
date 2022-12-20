@@ -17,7 +17,7 @@ export default function EnquiryList() {
 
   const getData = () => {
     axios
-      .get("https://enq-form-api.onrender.com/enq")
+      .get("http://localhost:5000/enq")
       .then((res) => {
         setList(res.data);
         setAllVal(res.data);
@@ -89,7 +89,7 @@ export default function EnquiryList() {
   };
   const editData = (id) => {
     axios
-      .put(`https://enq-form-api.onrender.com/enq/update-enqdata/${id}`, enqdata)
+      .put(`http://localhost:5000/enq/update-enqdata/${id}`, enqdata)
       .then((res) => {
         console.log(res.data);
         console.log("Empdata Successfully updated");
