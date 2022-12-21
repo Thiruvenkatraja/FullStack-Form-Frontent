@@ -49,18 +49,8 @@ export default function EnqDataTable({ obj , handleEditClick,List,setList,paged,
           </Button>
         </Modal.Footer>
       </Modal>
-      
-        <td>{obj.candiateFname}</td>
-        <td>{obj.candiateLname}</td>
-        <td>{obj.email}</td>
-        <td>{obj.mobile}</td>
-        <td>{obj.technology}</td>
-        <td>{obj.startdate}</td>
-        <td>{obj.followupdate}</td>
-        <td>{obj.resource}</td>
-        <td>{obj.status}</td>
-        <td>{obj.feedback}</td>
-        <td >
+
+      <td >
           <Button
            
             onClick={() =>{
@@ -81,6 +71,17 @@ export default function EnqDataTable({ obj , handleEditClick,List,setList,paged,
            <i className="fa fa-pencil" aria-hidden="true"/>
           </Button>
         </td>
+      
+        <td>{obj.candiatename}</td>
+        <td>{obj.email}</td>
+        <td>{obj.startdate}</td>
+        <td>{obj.followupdate}</td>
+        <td>{obj.technology}</td>
+        <td>{obj.resource}</td>
+        <td>{obj.status}</td>
+        <td>{obj.mobile}</td>
+        <td>{obj.feedback}</td>
+       
       </tr>
     
   );

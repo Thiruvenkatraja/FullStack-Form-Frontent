@@ -59,8 +59,7 @@ export default function EnquiryList() {
   };
 
   const [values, setValues] = useState({
-    candiateFname: "",
-    candiateLname: "",
+    candiatename: "",
     email: "",
     mobile: "",
     technology: "",
@@ -79,8 +78,7 @@ export default function EnquiryList() {
   };
 
   const enqdata = {
-    candiateFname: values.candiateFname,
-    candiateLname: values.candiateLname,
+    candiatename: values.candiatename,
     email: values.email,
     mobile: values.mobile,
     technology: values.technology,
@@ -108,8 +106,7 @@ export default function EnquiryList() {
     setEnqId(obj._id);
 
     const formValues = {
-      candiateFname: obj.candiateFname,
-      candiateLname: obj.candiateLname,
+      candiatename: obj.candiatename,
       email: obj.email,
       mobile: obj.mobile,
       technology: obj.technology,
@@ -132,8 +129,7 @@ export default function EnquiryList() {
 
     const editedData = {
       id: enqId,
-      candiateFname: values.candiateFname,
-      candiateLname: values.candiateLname,
+      candiatename: values.candiatename,
       email: values.email,
       mobile: values.mobile,
       technology: values.technology,
@@ -152,8 +148,7 @@ export default function EnquiryList() {
   };
   const Datass = list.map((edata,index)=>({
     SNo:index+1,
-   CandiateFname:edata.candiateFname,
-    CandiateLname:edata.candiateLname,
+   Candiatename:edata.candiatename,
     Email:edata.email,
     Mobile:edata.mobile,
     StartDate:edata.startdate,
@@ -168,7 +163,6 @@ export default function EnquiryList() {
 
   const [search, setSearch] = useState("");
   const [allVal, setAllVal] = useState([]);
-  const [click, setClick] = useState(true);
   const [click1, setClick1] = useState(true);
   const [click2, setClick2] = useState(true);
   const [click3, setClick3] = useState(true);
@@ -178,9 +172,6 @@ export default function EnquiryList() {
   const [click7, setClick7] = useState(true);
   const [click8, setClick8] = useState(true);
 
-  const toggle = () => {
-    setClick(!click);
-  };
   const toggle1 = () => {
     setClick1(!click1);
   };
@@ -237,11 +228,7 @@ export default function EnquiryList() {
           } else {
             let temp = allVal.filter(
               (data) =>
-                data.candiateFname
-                  .toLowerCase()
-                  .trim()
-                  .includes(search.toLowerCase()) ||
-                data.candiateLname
+                data.candiatename
                   .toLowerCase()
                   .trim()
                   .includes(search.toLowerCase()) ||
@@ -254,78 +241,10 @@ export default function EnquiryList() {
       <div
         className="drop-down"
         style={{
-          display: click ? "none" : "",
-          transition: click ? ".6s" : ".6s",
-          top: "15rem",
-          left: "2rem",
-        }}
-      >
-        <Multiselect
-          isObject={false}
-          id="css_custom"
-          // groupBy="cat"
-          closeIcon="circle"
-          // ref={multiselectRef}
-          style={{
-            optionContainer: {
-              width: "11rem",
-              height: "5rem",
-              background: "grey",
-              fontSize: "0.7rem",
-            },
-            searchBox: {
-              maxHeight: "2.5rem",
-              overflow: "hidden",
-              border: "2px solid black",
-            },
-            inputFileld: {
-              margin: "3px",
-            },
-          }}
-          keepSearchTerm="false"
-          options={allVal.map((fil) => fil.candiateFname)}
-          closeOnSelect
-          onSelect={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) =>
-                event.includes(data.candiateFname)
-              );
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          onRemove={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) =>
-                event.includes(data.candiateFname)
-              );
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          selectedValues={() => {
-            setList(allVal) || setPaged(allVal);
-          }}
-          showCheckbox
-          showArrow
-          displayValue
-        />
-        <button class="btn btn-primary okay" onClick={toggle}>
-          Okay
-        </button>
-      </div>
-
-      <div
-        className="drop-down"
-        style={{
           display: click1 ? "none" : "",
           transition: click1 ? ".6s" : ".6s",
           top: "15rem",
-          left: "12rem",
+          left: "9rem",
         }}
       >
         <Multiselect
@@ -351,14 +270,14 @@ export default function EnquiryList() {
             },
           }}
           keepSearchTerm="false"
-          options={allVal.map((fil) => fil.candiateLname)}
+          options={allVal.map((fil) => fil.candiatename)}
           closeOnSelect
           onSelect={(event) => {
             if (event.length === 0) {
               return setList(allVal) || setPaged(allVal);
             } else {
               let temp = allVal.filter((data) =>
-                event.includes(data.candiateLname)
+                event.includes(data.candiatename)
               );
               setPaged(temp) || setList(temp);
               console.log(event);
@@ -369,7 +288,7 @@ export default function EnquiryList() {
               return setList(allVal) || setPaged(allVal);
             } else {
               let temp = allVal.filter((data) =>
-                event.includes(data.candiateLname)
+                event.includes(data.candiatename)
               );
               setPaged(temp) || setList(temp);
               console.log(event);
@@ -456,7 +375,7 @@ export default function EnquiryList() {
           display: click3 ? "none" : "",
           transition: click3 ? ".6s" : ".6s",
           top: "15rem",
-          left: "35rem",
+          left: "78rem",
         }}
       >
         <Multiselect
@@ -520,7 +439,7 @@ export default function EnquiryList() {
           display: click4 ? "none" : "",
           transition: click4 ? ".6s" : ".6s",
           top: "15rem",
-          left: "42rem",
+          left: "48rem",
         }}
       >
         <Multiselect
@@ -588,7 +507,7 @@ export default function EnquiryList() {
           display: click5 ? "none" : "",
           transition: click5 ? ".6s" : ".6s",
           top: "15rem",
-          left: "55rem",
+          left: "33rem",
         }}
       >
         <Multiselect
@@ -657,7 +576,7 @@ export default function EnquiryList() {
           display: click6 ? "none" : "",
           transition: click6 ? ".6s" : ".6s",
           top: "15rem",
-          left: "62rem",
+          left: "40rem",
         }}
       >
         <Multiselect
@@ -725,7 +644,7 @@ export default function EnquiryList() {
           display: click7 ? "none" : "",
           transition: click7 ? ".6s" : ".6s",
           top: "15rem",
-          left: "70rem",
+          left: "60rem",
         }}
       >
         <Multiselect
@@ -789,7 +708,7 @@ export default function EnquiryList() {
           display: click8 ? "none" : "",
           transition: click8 ? ".6s" : ".6s",
           top: "15rem",
-          left: "81rem",
+          left: "70rem",
         }}
       >
         <Multiselect
@@ -853,10 +772,11 @@ export default function EnquiryList() {
         <Table className="tables" bordered hover>
           <thead style={{verticalAlign:'middle',boxSizing:'border-box'}}>
             <tr style={{background: "brown", color: "white" }}>
+            <th style={{ paddingRight: "5rem" }}>Actions</th>
               <th style={{ paddingRight: "5rem" }}>
               <FaFilter
                   className="filter"
-                  onClick={toggle}
+                  onClick={toggle1}
                   style={{
                     
                     marginLeft:'0.5rem',
@@ -865,7 +785,7 @@ export default function EnquiryList() {
                   }}
                 />
                 <i
-                  onClick={() => sorting("candiateFname")}
+                  onClick={() => sorting("candiatename")}
                   className={
                     order === "DSC"
                       ? "fa fa-sort-alpha-asc"
@@ -874,7 +794,7 @@ export default function EnquiryList() {
                   style={{ paddingRight: "1rem" }}
                 ></i>
                 
-                Candiate-Fname
+                Candiate-Name
                 {/* <FaFilter
                   className="filter"
                   onClick={toggle}
@@ -885,37 +805,7 @@ export default function EnquiryList() {
                   }}
                 /> */}
               </th>
-              <th style={{ paddingRight: "5rem" }}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle1}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("candiateLname")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Candiate-Lname
-                {/* <FaFilter
-                  className="filter"
-                  onClick={toggle1}
-                  style={{
-                    position: "absolute",
-                    left: "22rem",
-                    top: "1.5rem",
-                  }}
-                /> */}
-              </th>
+              
               <th style={{ paddingRight: "5rem" }}>
 
               <FaFilter
@@ -948,68 +838,8 @@ export default function EnquiryList() {
                   }}
                 /> */}
               </th>
-              <th style={{ paddingRight: "5rem" }}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle3}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("mobile")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Mobile
-                {/* <FaFilter
-                  className="filter"
-                  onClick={toggle3}
-                  style={{
-                    position: "absolute",
-                    left: "44.5rem",
-                    top: "1.5rem",
-                  }}
-                /> */}
-              </th>
-              <th style={{ paddingRight: "5rem" }}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle4}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("technology")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Technology
-                {/* <FaFilter
-                  className="filter"
-                  onClick={toggle4}
-                  style={{
-                    position: "absolute",
-                    left: "56.5rem",
-                    top: "1.5rem",
-                  }}
-                /> */}
-              </th>
+              
+              
               <th style={{ paddingRight: "5rem" }}>
               <FaFilter
                   className="filter"
@@ -1072,7 +902,37 @@ export default function EnquiryList() {
                   }}
                 /> */}
               </th>
-
+              <th style={{ paddingRight: "5rem" }}>
+              <FaFilter
+                  className="filter"
+                  onClick={toggle4}
+                  style={{
+                    
+                    marginLeft:'0.5rem',
+                    marginRight:'0.5rem'
+                   
+                  }}
+                />
+                <i
+                  onClick={() => sorting("technology")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ paddingRight: "1rem" }}
+                ></i>
+                Technology
+                {/* <FaFilter
+                  className="filter"
+                  onClick={toggle4}
+                  style={{
+                    position: "absolute",
+                    left: "56.5rem",
+                    top: "1.5rem",
+                  }}
+                /> */}
+              </th>
               <th style={{ paddingRight: "5rem" }}>
               <FaFilter
                   className="filter"
@@ -1135,6 +995,37 @@ export default function EnquiryList() {
                   }}
                 /> */}
               </th>
+              <th style={{ paddingRight: "5rem" }}>
+              <FaFilter
+                  className="filter"
+                  onClick={toggle3}
+                  style={{
+                    
+                    marginLeft:'0.5rem',
+                    marginRight:'0.5rem'
+                   
+                  }}
+                />
+                <i
+                  onClick={() => sorting("mobile")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ paddingRight: "1rem" }}
+                ></i>
+                Mobile
+                {/* <FaFilter
+                  className="filter"
+                  onClick={toggle3}
+                  style={{
+                    position: "absolute",
+                    left: "44.5rem",
+                    top: "1.5rem",
+                  }}
+                /> */}
+              </th>
               <th style={{ paddingRight: "8rem" }}>
                 <i
                   onClick={() => sorting("feedback")}
@@ -1147,7 +1038,7 @@ export default function EnquiryList() {
                 ></i>
                 Feedback
               </th>
-              <th style={{ paddingRight: "5rem" }}>Actions</th>
+              
             </tr>
           </thead>
           <tbody>

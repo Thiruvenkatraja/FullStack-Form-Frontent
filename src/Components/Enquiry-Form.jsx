@@ -11,7 +11,7 @@ const EnquiryForm=()=> {
     
   
     var curr = new Date();
-    curr.setDate(curr.getDate() + 3);
+    curr.setDate(curr.getDate());
     var date = curr.toISOString().substring(0,10);
 
     
@@ -23,19 +23,19 @@ const EnquiryForm=()=> {
         <div className="form-fields">
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
-           Candiate-F-Name
+           Candiate-Name *
           </label>
           <input
             className="form-input"
             type="text"
-            name="candiateFname"
+            name="candiatename"
             placeholder="Enter your FirstName"
-            value={values.candiateFname}
+            value={values.candiatename}
             onChange={handleChange}
           />
           {errors.fname && <p>{errors.fname}</p>}
         </div>
-        <div className="form-inputs">
+        {/* <div className="form-inputs">
           <label htmlFor="" className="formlabel">
           Candiate-L-Name
           </label>
@@ -48,7 +48,7 @@ const EnquiryForm=()=> {
             onChange={handleChange}
           />
           {errors.lname && <p>{errors.lname}</p>}
-        </div>
+        </div> */}
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
             E-Mail
@@ -63,23 +63,10 @@ const EnquiryForm=()=> {
           />
           {errors.email && <p>{errors.email}</p>}
         </div>
+        
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
-            Mobile
-          </label>
-          <input
-            className="form-input"
-            type="number"
-            name="mobile"
-            placeholder="Enter your MobileNum"
-            value={values.mobile}
-            onChange={handleChange}
-          />
-          {errors.mobile && <p>{errors.mobile}</p>}
-        </div>  
-        <div className="form-inputs">
-          <label htmlFor="" className="formlabel">
-            Start-Date
+            Start-Date *
           </label>
           <input
             className="form-input textbox-n"
@@ -94,7 +81,7 @@ const EnquiryForm=()=> {
         </div>
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
-           Follow-Up-Date
+           Follow-Up-Date *
           </label>
           <input
             className="form-input textbox-n"
@@ -108,7 +95,7 @@ const EnquiryForm=()=> {
         </div>
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
-            Technology
+            Technology *
           </label>
           <input
             className="form-input"
@@ -122,7 +109,7 @@ const EnquiryForm=()=> {
         </div>
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
-            Resource
+            Resource *
           </label>
           <input
             className="form-input"
@@ -136,7 +123,21 @@ const EnquiryForm=()=> {
         </div>
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
-            Status
+            Mobile *
+          </label>
+          <input
+            className="form-input"
+            type="number"
+            name="mobile"
+            placeholder="Enter your MobileNum"
+            value={values.mobile}
+            onChange={handleChange}
+          />
+          {errors.mobile && <p>{errors.mobile}</p>}
+        </div> 
+        <div className="form-inputs">
+          <label htmlFor="" className="formlabel">
+            Status *
           </label>
           <select className="form-input" name="status" value={values.status} onChange={handleChange}>
             <option >Click to Select Status</option>

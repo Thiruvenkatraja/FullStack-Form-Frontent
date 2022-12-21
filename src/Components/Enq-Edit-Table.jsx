@@ -5,22 +5,28 @@ const EnqEditTable = ({ values, handleChange }) => {
   return (
     <tr>
       <td>
-        <input
-          // className="form-input"
-          type="text"
-          name="candiateFname"
-          placeholder="Enter your FirstName"
-          value={values.candiateFname}
-          onChange={handleChange}
-        />
+        <button
+          type="submit"
+          style={{ borderStyle: "none", marginLeft: "0.5rem" }}
+        >
+          <Button
+            style={{
+              display: "flex",
+              alignItems: "centre",
+              justifyContent: "centre",
+            }}
+          >
+            <i className="fa fa-check" aria-hidden="true" />
+          </Button>
+        </button>
       </td>
       <td>
         <input
           // className="form-input"
           type="text"
-          name="candiateLname"
-          placeholder="Enter your LastName"
-          value={values.candiateLname}
+          name="candiatename"
+          placeholder="Enter your FirstName"
+          value={values.candiatename}
           onChange={handleChange}
         />
       </td>
@@ -34,26 +40,7 @@ const EnqEditTable = ({ values, handleChange }) => {
           onChange={handleChange}
         />
       </td>
-      <td>
-        <input
-          // className="form-input"
-          type="number"
-          name="mobile"
-          placeholder="Enter your MobileNum"
-          value={values.mobile}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <input
-          // className="form-input"
-          type="text"
-          name="technology"
-          placeholder="Technology"
-          value={values.technology}
-          onChange={handleChange}
-        />
-      </td>
+     
       <td>
         <input
           // className="form-input"
@@ -78,9 +65,9 @@ const EnqEditTable = ({ values, handleChange }) => {
         <input
           // className="form-input"
           type="text"
-          name="resource"
-          placeholder="Resource"
-          value={values.resource}
+          name="technology"
+          placeholder="Technology"
+          value={values.technology}
           onChange={handleChange}
         />
       </td>
@@ -88,13 +75,30 @@ const EnqEditTable = ({ values, handleChange }) => {
         <input
           // className="form-input"
           type="text"
-          name="status"
-          placeholder="Status"
-          value={values.status}
+          name="resource"
+          placeholder="Resource"
+          value={values.resource}
           onChange={handleChange}
         />
       </td>
-
+      <td>
+      <select name="status" value={values.status} onChange={handleChange} style={{padding:'0.2rem'}}>
+            <option >Click to Select Status</option>
+            <option >Active</option>
+            <option >Live</option>
+            <option >Closed</option>
+            </select>
+      </td>
+      <td>
+        <input
+          // className="form-input"
+          type="number"
+          name="mobile"
+          placeholder="Enter your MobileNum"
+          value={values.mobile}
+          onChange={handleChange}
+        />
+      </td>
       <td>
         <input
           // className="form-input message"
@@ -104,22 +108,6 @@ const EnqEditTable = ({ values, handleChange }) => {
           value={values.feedback}
           onChange={handleChange}
         />
-      </td>
-      <td>
-        <button
-          type="submit"
-          style={{ borderStyle: "none", marginLeft: "0.5rem" }}
-        >
-          <Button
-            style={{
-              display: "flex",
-              alignItems: "centre",
-              justifyContent: "centre",
-            }}
-          >
-            <i className="fa fa-check" aria-hidden="true" />
-          </Button>
-        </button>
       </td>
     </tr>
   );
