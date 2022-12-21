@@ -16,9 +16,12 @@ export default function EnquiryList() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const getData = () => {
-    axios
-      .get("https://enq-form-api.onrender.com/")
-      .then((res) => {
+    axios.get("https://enq-form-api.onrender.com/enq",{
+      headers: {
+        'Access-Control-Allow-Origin': true,
+      }
+    })
+        .then((res) => {
         setList(res.data);
         setAllVal(res.data);
         setPaged(_(res.data).slice(0).take(pageSize).value());
@@ -89,7 +92,7 @@ export default function EnquiryList() {
   };
   const editData = (id) => {
     axios
-      .put(`http://localhost:5000/enq/update-enqdata/${id}`, enqdata)
+      .put(`https://enq-form-api.onrender.com/enq/update-enqdata/${id}`, enqdata)
       .then((res) => {
         console.log(res.data);
         console.log("Empdata Successfully updated");

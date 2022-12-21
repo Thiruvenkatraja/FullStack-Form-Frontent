@@ -16,7 +16,7 @@ export default function EnqDataTable({ obj , handleEditClick,List,setList,paged,
   }
   const deleteEnqdata = () => {
     axios
-      .delete(`http://localhost:5000/enq/delete-enqdata/${deleteId}`)
+      .delete(`https://enq-form-api.onrender.com/enq/delete-enqdata/${deleteId}`)
       .then((res) => console.log("Employee Data Successfully deleted"))
 
       .catch((error) => {
