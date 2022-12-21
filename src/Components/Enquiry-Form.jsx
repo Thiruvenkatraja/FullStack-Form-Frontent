@@ -33,7 +33,7 @@ const EnquiryForm=()=> {
             value={values.candidatename}
             onChange={handleChange}
           />
-          {errors.name && <p>{errors.name}</p>}
+          {errors.candidatename && <p>{errors.candidatename}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
