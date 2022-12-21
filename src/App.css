@@ -75,10 +75,6 @@ main {
   position:absolute;
   margin: 5rem 4rem 0rem 3rem;
 }
-.tables {
-  margin-top: 2rem;
-
-}
 .active {
   border-right: 4px solid white;
   background: none;

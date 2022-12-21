@@ -63,7 +63,7 @@ export default function EnqDataTable({ obj , handleEditClick,List,setList,paged,
            <i className="fa fa-trash-o" aria-hidden="true"></i>
           </Button>
           <Button
-          style={{marginLeft:'2rem'}}
+          style={{marginLeft:'1rem'}}
             onClick={(event) => { handleEditClick(event,obj)}}
             size="sm"
             variant="primary"
@@ -72,16 +72,15 @@ export default function EnqDataTable({ obj , handleEditClick,List,setList,paged,
           </Button>
         </td>
       
-        <td>{obj.candiatename}</td>
-        <td>{obj.email}</td>
+        <td>{obj.candidatename}</td>
+        <td>{obj.mobile}</td>
         <td>{obj.startdate}</td>
         <td>{obj.followupdate}</td>
         <td>{obj.technology}</td>
         <td>{obj.resource}</td>
         <td>{obj.status}</td>
-        <td>{obj.mobile}</td>
         <td>{obj.feedback}</td>
-       
+        <td>{obj.email}</td>
       </tr>
     
   );

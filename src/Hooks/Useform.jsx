@@ -4,7 +4,7 @@ import axios from "axios";
 
  const UseForm = (Validation)=> {
   const [values, setValues] = useState({
-    candiatename: "",
+    candidatename: "",
     email: "",
     mobile: "",
     technology: "",
@@ -34,7 +34,7 @@ import axios from "axios";
      console.log("I am Working")
 
     const enqdata = {
-      candiatename: values.candiatename,
+      candidatename: values.candidatename,
       email: values.email,
       mobile: values.mobile,
       technology: values.technology,
@@ -51,7 +51,7 @@ import axios from "axios";
         
 
     setValues({
-      candiatename: "",
+      candidatename: "",
       email: "",
       mobile: "",
       technology: "",

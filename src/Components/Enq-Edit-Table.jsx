@@ -24,23 +24,22 @@ const EnqEditTable = ({ values, handleChange }) => {
         <input
           // className="form-input"
           type="text"
-          name="candiatename"
+          name="candidatename"
           placeholder="Enter your FirstName"
-          value={values.candiatename}
+          value={values.candidatename}
           onChange={handleChange}
         />
       </td>
       <td>
         <input
           // className="form-input"
-          type="email"
-          name="email"
-          placeholder="Enter your Email"
-          value={values.email}
+          type="number"
+          name="mobile"
+          placeholder="Enter your MobileNum"
+          value={values.mobile}
           onChange={handleChange}
         />
       </td>
-     
       <td>
         <input
           // className="form-input"
@@ -91,21 +90,21 @@ const EnqEditTable = ({ values, handleChange }) => {
       </td>
       <td>
         <input
-          // className="form-input"
-          type="number"
-          name="mobile"
-          placeholder="Enter your MobileNum"
-          value={values.mobile}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <input
           // className="form-input message"
           type="textarea"
           name="queries"
           placeholder="Type Here "
           value={values.feedback}
+          onChange={handleChange}
+        />
+      </td>
+      <td>
+        <input
+          // className="form-input"
+          type="email"
+          name="email"
+          placeholder="Enter your Email"
+          value={values.email}
           onChange={handleChange}
         />
       </td>

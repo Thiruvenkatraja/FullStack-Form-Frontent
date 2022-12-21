@@ -30,25 +30,11 @@ const EnquiryForm=()=> {
             type="text"
             name="candiatename"
             placeholder="Enter your FirstName"
-            value={values.candiatename}
+            value={values.candidatename}
             onChange={handleChange}
           />
-          {errors.fname && <p>{errors.fname}</p>}
+          {errors.name && <p>{errors.name}</p>}
         </div>
-        {/* <div className="form-inputs">
-          <label htmlFor="" className="formlabel">
-          Candiate-L-Name
-          </label>
-          <input
-            className="form-input"
-            type="text"
-            name="candiateLname"
-            placeholder="Enter your LastName"
-            value={values.candiateLname}
-            onChange={handleChange}
-          />
-          {errors.lname && <p>{errors.lname}</p>}
-        </div> */}
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
             E-Mail
