@@ -28,7 +28,7 @@ const EnquiryForm=()=> {
           <input
             className="form-input"
             type="text"
-            name="candiatename"
+            name="candidatename"
             placeholder="Enter your FirstName"
             value={values.candidatename}
             onChange={handleChange}
