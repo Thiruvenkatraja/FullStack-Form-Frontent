@@ -27,27 +27,37 @@ import axios from "axios";
     });
   };
 
+  const enqdata = {
+    candidatename: values.candidatename,
+    email: values.email,
+    mobile: values.mobile,
+    technology: values.technology,
+    startdate: values.startdate,
+    followupdate:values.followupdate,
+    resource: values.resource,
+    status: values.status,
+    feedback: values.feedback,
+  };
+
+
+  const postData=()=>{
+    if(Object.values(values).includes("") === false){
+      axios.post('https://enq-form-api.onrender.com/enq/EnquiryData', enqdata) 
+      .then(res=>console.log(res.data))
+       console.log("success",Object.values(values))
+    }
+  }
   
+
  const handleSubmit = (event) => {
     event.preventDefault();
+    // console.log(event)
      console.log(values)
      console.log("I am Working")
 
-    const enqdata = {
-      candidatename: values.candidatename,
-      email: values.email,
-      mobile: values.mobile,
-      technology: values.technology,
-      startdate: values.startdate,
-      followupdate:values.followupdate,
-      resource: values.resource,
-      status: values.status,
-      feedback: values.feedback,
-    };
-
+    
+     postData()
   
-  axios.post('https://enq-form-api.onrender.com/enq/EnquiryData', enqdata) 
-    .then(res=>console.log(res.data))
         
 
     setValues({

@@ -8,7 +8,7 @@ const EnquiryForm=()=> {
   const { handleChange, values, handleSubmit, errors, done} =
     UseForm(Validation);
 
-    
+ 
   
     var curr = new Date();
     curr.setDate(curr.getDate());
