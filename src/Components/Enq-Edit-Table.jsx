@@ -23,6 +23,16 @@ const EnqEditTable = ({ values, handleChange }) => {
       <td>
         <input
           // className="form-input"
+          type="date"
+          name="startdate"
+          placeholder="Start-Date"
+          value={values.startdate}
+          onChange={handleChange}
+        />
+      </td>
+      <td>
+        <input
+          // className="form-input"
           type="text"
           name="candidatename"
           placeholder="Enter your FirstName"
@@ -37,26 +47,6 @@ const EnqEditTable = ({ values, handleChange }) => {
           name="mobile"
           placeholder="Enter your MobileNum"
           value={values.mobile}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <input
-          // className="form-input"
-          type="date"
-          name="startdate"
-          placeholder="Start-Date"
-          value={values.startdate}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <input
-          // className="form-input"
-          type="date"
-          name="followupdate"
-          placeholder="Followup-Date"
-          value={values.followupdate}
           onChange={handleChange}
         />
       </td>
@@ -83,9 +73,15 @@ const EnqEditTable = ({ values, handleChange }) => {
       <td>
       <select name="status" value={values.status} onChange={handleChange} style={{padding:'0.2rem'}}>
             <option >Click to Select Status</option>
-            <option >Active</option>
-            <option >Live</option>
-            <option >Closed</option>
+            <option >Cannot provide support</option>
+            <option >Confrimed</option>
+            <option >Demo completed</option>
+            <option >Demo yet to Schedule</option>
+            <option >Follow up</option>
+            <option >No response</option>
+            <option >Not interested</option>
+            <option >Resource not available</option>
+            <option >Waiting for response</option>
             </select>
       </td>
       <td>
@@ -101,10 +97,10 @@ const EnqEditTable = ({ values, handleChange }) => {
       <td>
         <input
           // className="form-input"
-          type="email"
-          name="email"
-          placeholder="Enter your Email"
-          value={values.email}
+          type="date"
+          name="followupdate"
+          placeholder="Followup-Date"
+          value={values.followupdate}
           onChange={handleChange}
         />
       </td>

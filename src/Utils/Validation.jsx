@@ -4,9 +4,6 @@ export default function Validation(values){
     if(!values.candidatename){
         errors.candidatename="Name Required"
     }
-    if(!values.email){
-        errors.email="Email Required"
-    }
     if(!values.mobile){
         errors.mobile="MobileNum Required"
     }else if(values.mobile.length < 10){

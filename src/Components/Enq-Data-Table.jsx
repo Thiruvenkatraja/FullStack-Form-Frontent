@@ -14,18 +14,16 @@ export default function EnqDataTable({ obj , handleEditClick,List,setList,paged,
     setDeleteId(id)
     setShow(true)
   }
-  const deleteEnqdata = () => {
-    axios
-      .delete(`https://enq-form-api.onrender.com/enq/delete-enqdata/${deleteId}`)
+  const deleteEnqdata =async () => {
+   await axios.delete(`https://enq-form-api.onrender.com/enq/delete-enqdata/${deleteId}`)
       .then((res) => console.log("Employee Data Successfully deleted"))
 
       .catch((error) => {
         console.log(error);
       });
-      
       const newList = [...List||paged];
-      const index = List||paged.findIndex((lists) => lists.id === deleteId);
-      newList.splice(index, 1);
+      const index = List||paged.findIndex((lists) => lists._id === deleteId);
+      newList.splice(index,1);
       setPaged(newList)||setList(newList);
       setShow(false)
   };
@@ -71,16 +69,14 @@ export default function EnqDataTable({ obj , handleEditClick,List,setList,paged,
            <i className="fa fa-pencil" aria-hidden="true"/>
           </Button>
         </td>
-      
+        <td>{obj.startdate}</td>
         <td>{obj.candidatename}</td>
         <td>{obj.mobile}</td>
-        <td>{obj.startdate}</td>
-        <td>{obj.followupdate}</td>
         <td>{obj.technology}</td>
         <td>{obj.resource}</td>
         <td>{obj.status}</td>
         <td>{obj.feedback}</td>
-        <td>{obj.email}</td>
+        <td>{obj.followupdate}</td>
       </tr>
     
   );

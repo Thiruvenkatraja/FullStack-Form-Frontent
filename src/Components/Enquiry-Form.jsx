@@ -35,22 +35,7 @@ const EnquiryForm=()=> {
           />
           {errors.candidatename && <p>{errors.candidatename}</p>}
         </div>
-        <div className="form-inputs">
-          <label htmlFor="" className="formlabel">
-            E-Mail
-          </label>
-          <input
-            className="form-input"
-            type="email"
-            name="email"
-            placeholder="Enter your Email"
-            value={values.email}
-            onChange={handleChange}
-          />
-          {errors.email && <p>{errors.email}</p>}
-        </div>
-        
-        <div className="form-inputs">
+         <div className="form-inputs">
           <label htmlFor="" className="formlabel">
             Start-Date *
           </label>
@@ -126,10 +111,16 @@ const EnquiryForm=()=> {
             Status *
           </label>
           <select className="form-input" name="status" value={values.status} onChange={handleChange}>
-            <option >Click to Select Status</option>
-            <option >Active</option>
-            <option >Live</option>
-            <option >Closed</option>
+            <option >Click to select status</option>
+            <option >Cannot provide support</option>
+            <option >Confrimed</option>
+            <option >Demo completed</option>
+            <option >Demo yet to Schedule</option>
+            <option >Follow up</option>
+            <option >No response</option>
+            <option >Not interested</option>
+            <option >Resource not available</option>
+            <option >Waiting for response</option>
             </select>
           {errors.status && <p>{errors.status}</p>}
         </div>

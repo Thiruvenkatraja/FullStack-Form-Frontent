@@ -60,7 +60,6 @@ export default function EnquiryList() {
 
   const [values, setValues] = useState({
     candidatename: "",
-    email: "",
     mobile: "",
     technology: "",
     startdate: "",
@@ -79,7 +78,6 @@ export default function EnquiryList() {
 
   const enqdata = {
     candidatename: values.candidatename,
-    email: values.email,
     mobile: values.mobile,
     technology: values.technology,
     startdate: values.startdate,
@@ -107,7 +105,6 @@ export default function EnquiryList() {
 
     const formValues = {
       candidatename: obj.candidatename,
-      email: obj.email,
       mobile: obj.mobile,
       technology: obj.technology,
       startdate: obj.startdate,
@@ -130,7 +127,6 @@ export default function EnquiryList() {
     const editedData = {
       id: enqId,
       candidatename: values.candidatename,
-      email: values.email,
       mobile: values.mobile,
       technology: values.technology,
       startdate: values.startdate,
@@ -148,15 +144,14 @@ export default function EnquiryList() {
   };
   const Datass = list.map((edata,index)=>({
     SNo:index+1,
-   Candidatename:edata.candidatename,
-    Email:edata.email,
-    Mobile:edata.mobile,
     StartDate:edata.startdate,
-    Followupdate:edata.followupdate,
+   Candidatename:edata.candidatename,
+    Mobile:edata.mobile,
     Technology:edata.technology,
     Resource:edata.resource,
     Status:edata.status,
-    Feedback:edata.feedback
+    Feedback:edata.feedback,
+    Followupdate:edata.followupdate
 }))
   const Datas = Datass
   const Filename ='EnquiredData'
@@ -164,7 +159,6 @@ export default function EnquiryList() {
   const [search, setSearch] = useState("");
   const [allVal, setAllVal] = useState([]);
   const [click1, setClick1] = useState(true);
-  const [click2, setClick2] = useState(true);
   const [click3, setClick3] = useState(true);
   const [click4, setClick4] = useState(true);
   const [click5, setClick5] = useState(true);
@@ -174,9 +168,6 @@ export default function EnquiryList() {
 
   const toggle1 = () => {
     setClick1(!click1);
-  };
-  const toggle2 = () => {
-    setClick2(!click2);
   };
   const toggle3 = () => {
     setClick3(!click3);
@@ -244,7 +235,7 @@ export default function EnquiryList() {
           display: click1 ? "none" : "",
           transition: click1 ? ".6s" : ".6s",
           top: "9rem",
-          left: "14rem",
+          left: "12rem",
         }}
       >
         <Multiselect
@@ -257,7 +248,7 @@ export default function EnquiryList() {
             optionContainer: {
               width: "11rem",
               height: "5rem",
-              background: "grey",
+              background: "#82AAE3",
               fontSize: "0.7rem",
             },
             searchBox: {
@@ -309,69 +300,6 @@ export default function EnquiryList() {
       <div
         className="drop-down"
         style={{
-          display: click2 ? "none" : "",
-          transition: click2 ? ".6s" : ".6s",
-          top: "9rem",
-          left: "85rem",
-        }}
-      >
-        <Multiselect
-          isObject={false}
-          id="css_custom"
-          // groupBy="cat"
-          closeIcon="circle"
-          // ref={multiselectRef}
-          style={{
-            optionContainer: {
-              width: "11rem",
-              height: "5rem",
-              background: "grey",
-              fontSize: "0.7rem",
-            },
-            searchBox: {
-              maxHeight: "2.5rem",
-              overflow: "hidden",
-              border: "2px solid black",
-            },
-            inputFileld: {
-              margin: "3px",
-            },
-          }}
-          keepSearchTerm="false"
-          options={allVal.map((fil) => fil.email)}
-          closeOnSelect
-          onSelect={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) => event.includes(data.email));
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          onRemove={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) => event.includes(data.email));
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          selectedValues={() => {
-            setList(allVal) || setPaged(allVal);
-          }}
-          showCheckbox
-          showArrow
-          displayValue
-        />
-        <button class="btn btn-primary okay" onClick={toggle2}>
-          Okay
-        </button>
-      </div>
-      <div
-        className="drop-down"
-        style={{
           display: click3 ? "none" : "",
           transition: click3 ? ".6s" : ".6s",
           top: "9rem",
@@ -388,7 +316,7 @@ export default function EnquiryList() {
             optionContainer: {
               width: "11rem",
               height: "5rem",
-              background: "grey",
+              background: "#82AAE3",
               fontSize: "0.7rem",
             },
             searchBox: {
@@ -452,7 +380,7 @@ export default function EnquiryList() {
             optionContainer: {
               width: "11rem",
               height: "5rem",
-              background: "grey",
+              background: "#82AAE3",
               fontSize: "0.7rem",
             },
             searchBox: {
@@ -520,7 +448,7 @@ export default function EnquiryList() {
             optionContainer: {
               width: "11rem",
               height: "5rem",
-              background: "grey",
+              background: "#82AAE3",
               fontSize: "0.7rem",
             },
             searchBox: {
@@ -589,7 +517,7 @@ export default function EnquiryList() {
             optionContainer: {
               width: "11rem",
               height: "5rem",
-              background: "grey",
+              background: "#82AAE3",
               fontSize: "0.7rem",
             },
             searchBox: {
@@ -657,7 +585,7 @@ export default function EnquiryList() {
             optionContainer: {
               width: "11rem",
               height: "5rem",
-              background: "grey",
+              background: "#82AAE3",
               fontSize: "0.7rem",
             },
             searchBox: {
@@ -721,7 +649,7 @@ export default function EnquiryList() {
             optionContainer: {
               width: "11rem",
               height: "5rem",
-              background: "grey",
+              background: "#82AAE3",
               fontSize: "0.7rem",
             },
             searchBox: {
@@ -776,7 +704,30 @@ export default function EnquiryList() {
             <tr style={{background: "brown", color: "white" }}>
             
             <th><div style={{width:'5rem'}}>Actions</div></th>
-          
+            <th>
+              <div style={{width:'9rem'}}>
+              <FaFilter
+                  className="filter"
+                  onClick={toggle5}
+                  style={{
+                    
+                    marginLeft:'0.5rem',
+                    marginRight:'0.5rem'
+                   
+                  }}
+                />
+                <i
+                  onClick={() => sorting("startdate")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ paddingRight: "1rem" }}
+                ></i>
+                Start-Date
+                </div>
+              </th>
             
               <th >
               <div style={{width:'12rem'}}>
@@ -825,54 +776,6 @@ export default function EnquiryList() {
                   style={{ paddingRight: "1rem" }}
                 ></i>
                 Mobile
-                </div>
-              </th>
-              <th>
-              <div style={{width:'9rem'}}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle5}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("startdate")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Start-Date
-                </div>
-              </th>
-              <th>
-              <div style={{width:'11rem'}}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle6}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("followupdate")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Follow-Up-Date
                 </div>
               </th>
               <th>
@@ -962,11 +865,12 @@ export default function EnquiryList() {
                 Feedback
                 </div>
               </th>
+
               <th>
-              <div style={{width:'8rem',overflow:'hidden'}}>
+              <div style={{width:'11rem'}}>
               <FaFilter
                   className="filter"
-                  onClick={toggle2}
+                  onClick={toggle6}
                   style={{
                     
                     marginLeft:'0.5rem',
@@ -975,7 +879,7 @@ export default function EnquiryList() {
                   }}
                 />
                 <i
-                  onClick={() => sorting("email")}
+                  onClick={() => sorting("followupdate")}
                   className={
                     order === "DSC"
                       ? "fa fa-sort-alpha-asc"
@@ -983,9 +887,8 @@ export default function EnquiryList() {
                   }
                   style={{ paddingRight: "1rem" }}
                 ></i>
-                Email
+                Follow-Up-Date
                 </div>
-                
               </th>
               
             </tr>

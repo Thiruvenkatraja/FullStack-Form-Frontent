@@ -84,8 +84,8 @@ main {
   height: 12rem;
   box-shadow: 7px 5px 7px 5px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
-  background: rgba(228, 225, 225, 0.712);
-  z-index: 2;
+  background: rgb(248, 244, 244);
+  z-index: 4;
   position: absolute;
 }
 /* .table > thead {
