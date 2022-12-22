@@ -1,7 +1,7 @@
 export default function Validation(values){
     let errors={}
 
-    if(!values.candidateFname){
+    if(!values.candidatename){
         errors.candidatename="Name Required"
     }
     if(!values.email){
