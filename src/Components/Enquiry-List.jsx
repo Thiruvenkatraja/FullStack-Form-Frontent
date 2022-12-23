@@ -235,7 +235,7 @@ export default function EnquiryList() {
           display: click1 ? "none" : "",
           transition: click1 ? ".6s" : ".6s",
           top: "9rem",
-          left: "12rem",
+          left: "19rem",
         }}
       >
         <Multiselect
@@ -303,7 +303,7 @@ export default function EnquiryList() {
           display: click3 ? "none" : "",
           transition: click3 ? ".6s" : ".6s",
           top: "9rem",
-          left: "22rem",
+          left: "32rem",
         }}
       >
         <Multiselect
@@ -367,7 +367,7 @@ export default function EnquiryList() {
           display: click4 ? "none" : "",
           transition: click4 ? ".6s" : ".6s",
           top: "9rem",
-          left: "54rem",
+          left: "42rem",
         }}
       >
         <Multiselect
@@ -435,7 +435,7 @@ export default function EnquiryList() {
           display: click5 ? "none" : "",
           transition: click5 ? ".6s" : ".6s",
           top: "9rem",
-          left: "33rem",
+          left: "10rem",
         }}
       >
         <Multiselect
@@ -504,7 +504,7 @@ export default function EnquiryList() {
           display: click6 ? "none" : "",
           transition: click6 ? ".6s" : ".6s",
           top: "9rem",
-          left: "41rem",
+          left: "73rem",
         }}
       >
         <Multiselect
@@ -572,7 +572,7 @@ export default function EnquiryList() {
           display: click7 ? "none" : "",
           transition: click7 ? ".6s" : ".6s",
           top: "9rem",
-          left: "64rem",
+          left: "52rem",
         }}
       >
         <Multiselect
@@ -636,7 +636,7 @@ export default function EnquiryList() {
           display: click8 ? "none" : "",
           transition: click8 ? ".6s" : ".6s",
           top: "9rem",
-          left: "75rem",
+          left: "63rem",
         }}
       >
         <Multiselect
