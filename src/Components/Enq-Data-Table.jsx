@@ -21,9 +21,7 @@ export default function EnqDataTable({ obj , handleEditClick,List,setList,paged,
       .catch((error) => {
         console.log(error);
       });
-      const newList = [...List||paged];
-      const index = List||paged.findIndex((lists) => lists._id === deleteId);
-      newList.splice(index,1);
+      const newList=List.filter((lists)=>lists._id !== deleteId)
       setPaged(newList)||setList(newList);
       setShow(false)
   };
