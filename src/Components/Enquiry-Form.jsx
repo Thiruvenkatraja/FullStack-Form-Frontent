@@ -3,8 +3,7 @@ import Validation from "../Utils/Validation";
 
 
 
-
-const EnquiryForm=()=> {
+ const EnquiryForm=()=> {
   const { handleChange, values, handleSubmit, errors, done} =
     UseForm(Validation);
 
@@ -13,7 +12,6 @@ const EnquiryForm=()=> {
     var curr = new Date();
     curr.setDate(curr.getDate());
     var date = curr.toISOString().substring(0,10);
-
     
   return (
     <div className="form-right">
@@ -35,6 +33,7 @@ const EnquiryForm=()=> {
           />
           {errors.candidatename && <p>{errors.candidatename}</p>}
         </div>
+        
          <div className="form-inputs">
           <label htmlFor="" className="formlabel">
             Start-Date *
@@ -45,7 +44,6 @@ const EnquiryForm=()=> {
             placeholder="date"
             type="date"
             value={values.startdate||date}
-            
             onChange={handleChange}
           />
           {errors.startdate && <p>{errors.startdate}</p>}

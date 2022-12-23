@@ -696,7 +696,7 @@ export default function EnquiryList() {
       <div style={{margin:'1rem'}}>
       <ExportToExcel csvData={Datas} fileName={Filename}/>
       </div>
-      <form className="table-data" onSubmit={handleSubmit}>
+      <form className="table-data"  onSubmit={handleSubmit}>
         <Table bordered hover >
           
           <thead style={{verticalAlign:'middle',boxSizing:'border-box'}}>
