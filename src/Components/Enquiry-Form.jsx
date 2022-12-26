@@ -17,7 +17,7 @@ import Validation from "../Utils/Validation";
     <div className="form-right">
       
       <form className="form" onSubmit={handleSubmit}>
-        <h1>Fill The Details For Enquiry</h1>
+        <h1>Fill The Details To Save Data</h1>
         <div className="form-fields">
         <div className="form-inputs">
           <label htmlFor="" className="formlabel">

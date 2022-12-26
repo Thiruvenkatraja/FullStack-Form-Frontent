@@ -55,6 +55,10 @@ main {
   white-space: nowrap;
   font-size: 15px;
   text-decoration: none;
+  margin:1rem 0;
+}
+.icon{
+  margin:1rem 0;
 }
 .link {
   display: flex;
