@@ -8,13 +8,13 @@
     height: 3rem;
   }
 .home-container img{
-    width:96vw;
-    height:80vh;
+    width:95vw;
+    height:85vh;
 }
 .header-img img{
    width:25vw;
    color:black;
-    top:-40vh;
+    top:-35vh;
     left:3vw;
     position:absolute;
 }
@@ -22,9 +22,9 @@
     width:30vw;
     color:black;
     font-size:1rem;
-    top:8vh;
+    top:13vh;
     color:rgb(0, 255, 98);
     font-weight:bold;
-    left:10.5vw;
+    left:11vw;
     position:absolute;  
 }
