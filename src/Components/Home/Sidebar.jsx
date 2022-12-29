@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { FaHome, FaWpforms, FaList, FaBars,FaTimes } from "react-icons/fa";
+import { FaHome, FaWpforms, FaList, FaBars,FaTimes,FaListAlt } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const Routes = [
@@ -18,6 +18,11 @@ const Routes = [
     path: "/enqlist",
     name: "Enq-List",
     icon: <FaList />,
+  },
+  {
+    path: "/enqfilterlist",
+    name: "Follow-Up-List",
+    icon: <FaListAlt/>,
   },
 ];
 
@@ -43,8 +48,8 @@ const Sidebar = ({ children }) => {
   return (
     <div className="main-container">
       <div className='nav-controls'>
-      <div className="top-bar" style={{ zIndex:'3',left: open?'12.5rem':'2.5rem',transition: open ?'.9s':'.4s'}}>
-        <h1>Intellecto-Global-Services</h1>
+      <div className="top-bar" style={{ zIndex:'1'}}>
+        <h1 style={{marginLeft: open?'10.5rem':'0rem',transition: open ?'.9s':'.9s'}}>Intellecto-Global-Services</h1>
       </div>
 
       <motion.div

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import Gif from '../Utils/Gif.gif';
+import Gif from './Gif.gif';
 import Typical from "react-typical";
 
 const Home = () => {

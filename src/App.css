@@ -63,18 +63,20 @@ main {
 }
 .link {
   display: flex;
+  text-decoration:none;
   color: white;
   gap: 1rem;
   padding: 5px 10px;
 }
 .link:hover {
   border-right: 4px solid white;
-  background: rgb(45, 51, 89);
+  color:white;
+  background: #017fa5;
   transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 .active {
   border-right: 4px solid white;
-  background: rgb(45, 51, 89);
+  background: #017fa5;
 }
 .data-table{
   position:absolute;

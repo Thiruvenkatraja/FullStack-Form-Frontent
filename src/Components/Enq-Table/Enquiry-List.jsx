@@ -229,213 +229,26 @@ export default function EnquiryList() {
           }
         }}
       />
-      <div
-        className="drop-down"
-        style={{
-          display: click1 ? "none" : "",
-          transition: click1 ? ".6s" : ".6s",
-          top: "9rem",
-          left: "19rem",
-        }}
-      >
-        <Multiselect
-          isObject={false}
-          id="css_custom"
-          // groupBy="cat"
-          closeIcon="circle"
-          // ref={multiselectRef}
-          style={{
-            optionContainer: {
-              width: "11rem",
-              height: "5rem",
-              background: "#82AAE3",
-              fontSize: "0.7rem",
-            },
-            searchBox: {
-              maxHeight: "2.5rem",
-              overflow: "hidden",
-              border: "2px solid black",
-            },
-            inputFileld: {
-              margin: "3px",
-            },
-          }}
-          keepSearchTerm="false"
-          options={allVal.map((fil) => fil.candidatename)}
-          closeOnSelect
-          onSelect={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) =>
-                event.includes(data.candidatename)
-              );
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          onRemove={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) =>
-                event.includes(data.candidatename)
-              );
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          selectedValues={() => {
-            setList(allVal) || setPaged(allVal);
-          }}
-          showCheckbox
-          showArrow
-          displayValue
-        />
-        <button class="btn btn-primary okay" onClick={toggle1}>
-          Okay
-        </button>
+      <div style={{margin:'1rem'}}>
+      <ExportToExcel csvData={Datas} fileName={Filename}/>
       </div>
+      <form className="table-data"  onSubmit={handleSubmit}>
+        <Table bordered hover >
+          
+          <thead style={{verticalAlign:'middle',boxSizing:'border-box'}}>
+          
+            <tr style={{background: "brown", color: "white" }}>
+            
+            <th><div style={{width:'5rem'}}>Actions</div></th>
+            <th>
 
-      <div
-        className="drop-down"
-        style={{
-          display: click3 ? "none" : "",
-          transition: click3 ? ".6s" : ".6s",
-          top: "9rem",
-          left: "32rem",
-        }}
-      >
-        <Multiselect
-          isObject={false}
-          id="css_custom"
-          // groupBy="cat"
-          closeIcon="circle"
-          // ref={multiselectRef}
-          style={{
-            optionContainer: {
-              width: "11rem",
-              height: "5rem",
-              background: "#82AAE3",
-              fontSize: "0.7rem",
-            },
-            searchBox: {
-              maxHeight: "2.5rem",
-              overflow: "hidden",
-              border: "2px solid black",
-            },
-            inputFileld: {
-              margin: "3px",
-            },
-          }}
-          keepSearchTerm="false"
-          options={allVal.map((fil) => fil.mobile)}
-          closeOnSelect
-          onSelect={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) => event.includes(data.mobile));
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          onRemove={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) => event.includes(data.mobile));
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          selectedValues={() => {
-            setList(allVal) || setPaged(allVal);
-          }}
-          showCheckbox
-          showArrow
-          displayValue
-        />
-        <button class="btn btn-primary okay" onClick={toggle3}>
-          Okay
-        </button>
-      </div>
-
-      <div
-        className="drop-down"
-        style={{
-          display: click4 ? "none" : "",
-          transition: click4 ? ".6s" : ".6s",
-          top: "9rem",
-          left: "42rem",
-        }}
-      >
-        <Multiselect
-          isObject={false}
-          id="css_custom"
-          // groupBy="cat"
-          closeIcon="circle"
-          // ref={multiselectRef}
-          style={{
-            optionContainer: {
-              width: "11rem",
-              height: "5rem",
-              background: "#82AAE3",
-              fontSize: "0.7rem",
-            },
-            searchBox: {
-              maxHeight: "2.5rem",
-              overflow: "hidden",
-              border: "2px solid black",
-            },
-            inputFileld: {
-              margin: "3px",
-            },
-          }}
-          keepSearchTerm="false"
-          options={allVal.map((fil) => fil.technology)}
-          closeOnSelect
-          onSelect={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) =>
-                event.includes(data.technology)
-              );
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          onRemove={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) =>
-                event.includes(data.technology)
-              );
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          selectedValues={() => {
-            setList(allVal) || setPaged(allVal);
-          }}
-          showCheckbox
-          showArrow
-          displayValue
-        />
-        <button class="btn btn-primary okay" onClick={toggle4}>
-          Okay
-        </button>
-      </div>
-
-      <div
+            <div
         className="drop-down"
         style={{
           display: click5 ? "none" : "",
           transition: click5 ? ".6s" : ".6s",
           top: "9rem",
-          left: "10rem",
+          
         }}
       >
         <Multiselect
@@ -496,9 +309,504 @@ export default function EnquiryList() {
         <button class="btn btn-primary okay" onClick={toggle5}>
           Okay
         </button>
-      </div>
+            </div>
 
-      <div
+              <div style={{width:'9rem'}}>
+              <FaFilter
+                  className="filter"
+                  onClick={toggle5}
+                  style={{
+                    
+                    marginLeft:'0.5rem',
+                    marginRight:'0.5rem'
+                   
+                  }}
+                />
+                <i
+                  onClick={() => sorting("startdate")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ paddingRight: "1rem" }}
+                ></i>
+                Start-Date
+                </div>
+              </th>
+            
+              <th >
+              <div style={{width:'12rem'}}>
+
+              <div
+        className="drop-down"
+        style={{
+          display: click1 ? "none" : "",
+          transition: click1 ? ".6s" : ".6s",
+          top: "9rem",
+          
+        }}
+      >
+        <Multiselect
+          isObject={false}
+          id="css_custom"
+          // groupBy="cat"
+          closeIcon="circle"
+          // ref={multiselectRef}
+          style={{
+            optionContainer: {
+              width: "11rem",
+              height: "5rem",
+              background: "#82AAE3",
+              fontSize: "0.7rem",
+            },
+            searchBox: {
+              maxHeight: "2.5rem",
+              overflow: "hidden",
+              border: "2px solid black",
+            },
+            inputFileld: {
+              margin: "3px",
+            },
+          }}
+          keepSearchTerm="false"
+          options={allVal.map((fil) => fil.candidatename)}
+          closeOnSelect
+          onSelect={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) =>
+                event.includes(data.candidatename)
+              );
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          onRemove={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) =>
+                event.includes(data.candidatename)
+              );
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          selectedValues={() => {
+            setList(allVal) || setPaged(allVal);
+          }}
+          showCheckbox
+          showArrow
+          displayValue
+        />
+        <button class="btn btn-primary okay" onClick={toggle1}>
+          Okay
+        </button>
+               </div>
+
+              <FaFilter
+                  className="filter"
+                  onClick={toggle1}
+                  style={{
+                    
+                    marginLeft:'0.5rem',
+                    marginRight:'0.5rem'
+                   
+                  }}
+                />
+                <i
+                  onClick={() => sorting("candiatename")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ marginRight: "1rem" }}
+                ></i>
+                
+                Candidate-Name
+                </div>
+              </th>
+              <th>
+
+              <div
+        className="drop-down"
+        style={{
+          display: click3 ? "none" : "",
+          transition: click3 ? ".6s" : ".6s",
+          top: "9rem",
+          
+        }}
+      >
+        <Multiselect
+          isObject={false}
+          id="css_custom"
+          // groupBy="cat"
+          closeIcon="circle"
+          // ref={multiselectRef}
+          style={{
+            optionContainer: {
+              width: "11rem",
+              height: "5rem",
+              background: "#82AAE3",
+              fontSize: "0.7rem",
+            },
+            searchBox: {
+              maxHeight: "2.5rem",
+              overflow: "hidden",
+              border: "2px solid black",
+            },
+            inputFileld: {
+              margin: "3px",
+            },
+          }}
+          keepSearchTerm="false"
+          options={allVal.map((fil) => fil.mobile)}
+          closeOnSelect
+          onSelect={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) => event.includes(data.mobile));
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          onRemove={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) => event.includes(data.mobile));
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          selectedValues={() => {
+            setList(allVal) || setPaged(allVal);
+          }}
+          showCheckbox
+          showArrow
+          displayValue
+        />
+        <button class="btn btn-primary okay" onClick={toggle3}>
+          Okay
+        </button>
+              </div>
+
+              <div style={{width:'8rem'}}>
+              <FaFilter
+                  className="filter"
+                  onClick={toggle3}
+                  style={{
+                    
+                    marginLeft:'0.5rem',
+                    marginRight:'0.5rem'
+                   
+                  }}
+                />
+                <i
+                  onClick={() => sorting("mobile")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ paddingRight: "1rem" }}
+                ></i>
+                Mobile
+                </div>
+              </th>
+              <th>
+              <div
+        className="drop-down"
+        style={{
+          display: click4 ? "none" : "",
+          transition: click4 ? ".6s" : ".6s",
+          top: "9rem",
+          
+        }}
+      >
+        <Multiselect
+          isObject={false}
+          id="css_custom"
+          // groupBy="cat"
+          closeIcon="circle"
+          // ref={multiselectRef}
+          style={{
+            optionContainer: {
+              width: "11rem",
+              height: "5rem",
+              background: "#82AAE3",
+              fontSize: "0.7rem",
+            },
+            searchBox: {
+              maxHeight: "2.5rem",
+              overflow: "hidden",
+              border: "2px solid black",
+            },
+            inputFileld: {
+              margin: "3px",
+            },
+          }}
+          keepSearchTerm="false"
+          options={allVal.map((fil) => fil.technology)}
+          closeOnSelect
+          onSelect={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) =>
+                event.includes(data.technology)
+              );
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          onRemove={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) =>
+                event.includes(data.technology)
+              );
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          selectedValues={() => {
+            setList(allVal) || setPaged(allVal);
+          }}
+          showCheckbox
+          showArrow
+          displayValue
+        />
+        <button class="btn btn-primary okay" onClick={toggle4}>
+          Okay
+        </button>
+               </div>
+
+              <div style={{width:'10rem'}}>
+              <FaFilter
+                  className="filter"
+                  onClick={toggle4}
+                  style={{
+                    
+                    marginLeft:'0.5rem',
+                    marginRight:'0.5rem'
+                   
+                  }}
+                />
+                <i
+                  onClick={() => sorting("technology")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ paddingRight: "1rem" }}
+                ></i>
+                Technology
+                </div>
+              </th>
+              <th>
+              
+              <div
+        className="drop-down"
+        style={{
+          display: click7 ? "none" : "",
+          transition: click7 ? ".6s" : ".6s",
+          top: "9rem",
+          
+        }}
+      >
+        <Multiselect
+          isObject={false}
+          id="css_custom"
+          // groupBy="cat"
+          closeIcon="circle"
+          // ref={multiselectRef}
+          style={{
+            optionContainer: {
+              width: "11rem",
+              height: "5rem",
+              background: "#82AAE3",
+              fontSize: "0.7rem",
+            },
+            searchBox: {
+              maxHeight: "2.5rem",
+              overflow: "hidden",
+              border: "2px solid black",
+            },
+            inputFileld: {
+              margin: "3px",
+            },
+          }}
+          keepSearchTerm="false"
+          options={allVal.map((fil) => fil.resource)}
+          closeOnSelect
+          onSelect={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) => event.includes(data.resource));
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          onRemove={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) => event.includes(data.resource));
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          selectedValues={() => {
+            setList(allVal) || setPaged(allVal);
+          }}
+          showCheckbox
+          showArrow
+          displayValue
+        />
+        <button class="btn btn-primary okay" onClick={toggle7}>
+          Okay
+        </button>
+              </div>
+
+              <div style={{width:'9rem'}}>
+              <FaFilter
+                  className="filter"
+                  onClick={toggle7}
+                  style={{
+                    
+                    marginLeft:'0.5rem',
+                    marginRight:'0.5rem'
+                   
+                  }}
+                />
+                <i
+                  onClick={() => sorting("resource")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ paddingRight: "1rem" }}
+                ></i>
+                Resource
+                </div>
+              </th>
+              <th>
+
+              <div
+        className="drop-down"
+        style={{
+          display: click8 ? "none" : "",
+          transition: click8 ? ".6s" : ".6s",
+          top: "9rem",
+          
+        }}
+      >
+        <Multiselect
+          isObject={false}
+          id="css_custom"
+          // groupBy="cat"
+          closeIcon="circle"
+          // ref={multiselectRef}
+          style={{
+            optionContainer: {
+              width: "11rem",
+              height: "5rem",
+              background: "#82AAE3",
+              fontSize: "0.7rem",
+            },
+            searchBox: {
+              maxHeight: "2.5rem",
+              overflow: "hidden",
+              border: "2px solid black",
+            },
+            inputFileld: {
+              margin: "3px",
+            },
+          }}
+          keepSearchTerm="false"
+          options={allVal.map((fil) => fil.status)}
+          closeOnSelect
+          onSelect={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) => event.includes(data.status));
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          onRemove={(event) => {
+            if (event.length === 0) {
+              return setList(allVal) || setPaged(allVal);
+            } else {
+              let temp = allVal.filter((data) => event.includes(data.status));
+              setPaged(temp) || setList(temp);
+              console.log(event);
+            }
+          }}
+          selectedValues={() => {
+            setList(allVal) || setPaged(allVal);
+          }}
+          showCheckbox
+          showArrow
+          displayValue
+        />
+        <button class="btn btn-primary okay" onClick={toggle8}>
+          Okay
+        </button>
+               </div>
+
+              <div style={{width:'8rem'}}>
+              <FaFilter
+                  className="filter"
+                  onClick={toggle8}
+                  style={{
+                    
+                    marginLeft:'0.5rem',
+                    marginRight:'0.5rem'
+                   
+                  }}
+                />
+                <i
+                  onClick={() => sorting("status")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ paddingRight: "1rem" }}
+                ></i>
+                Status
+                </div>
+              </th>
+              
+              <th>
+              <div style={{width:'8rem',overflow:'hidden'}}>
+                <i
+                  onClick={() => sorting("feedback")}
+                  className={
+                    order === "DSC"
+                      ? "fa fa-sort-alpha-asc"
+                      : "fa fa-sort-alpha-desc"
+                  }
+                  style={{ paddingRight: "1rem" }}
+                ></i>
+                Feedback
+                </div>
+              </th>
+
+              <th>
+
+              <div
         className="drop-down"
         style={{
           display: click6 ? "none" : "",
@@ -564,309 +872,8 @@ export default function EnquiryList() {
         <button class="btn btn-primary okay" onClick={toggle6}>
           Okay
         </button>
-      </div>
+              </div>
 
-      <div
-        className="drop-down"
-        style={{
-          display: click7 ? "none" : "",
-          transition: click7 ? ".6s" : ".6s",
-          top: "9rem",
-          left: "52rem",
-        }}
-      >
-        <Multiselect
-          isObject={false}
-          id="css_custom"
-          // groupBy="cat"
-          closeIcon="circle"
-          // ref={multiselectRef}
-          style={{
-            optionContainer: {
-              width: "11rem",
-              height: "5rem",
-              background: "#82AAE3",
-              fontSize: "0.7rem",
-            },
-            searchBox: {
-              maxHeight: "2.5rem",
-              overflow: "hidden",
-              border: "2px solid black",
-            },
-            inputFileld: {
-              margin: "3px",
-            },
-          }}
-          keepSearchTerm="false"
-          options={allVal.map((fil) => fil.resource)}
-          closeOnSelect
-          onSelect={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) => event.includes(data.resource));
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          onRemove={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) => event.includes(data.resource));
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          selectedValues={() => {
-            setList(allVal) || setPaged(allVal);
-          }}
-          showCheckbox
-          showArrow
-          displayValue
-        />
-        <button class="btn btn-primary okay" onClick={toggle7}>
-          Okay
-        </button>
-      </div>
-
-      <div
-        className="drop-down"
-        style={{
-          display: click8 ? "none" : "",
-          transition: click8 ? ".6s" : ".6s",
-          top: "9rem",
-          left: "63rem",
-        }}
-      >
-        <Multiselect
-          isObject={false}
-          id="css_custom"
-          // groupBy="cat"
-          closeIcon="circle"
-          // ref={multiselectRef}
-          style={{
-            optionContainer: {
-              width: "11rem",
-              height: "5rem",
-              background: "#82AAE3",
-              fontSize: "0.7rem",
-            },
-            searchBox: {
-              maxHeight: "2.5rem",
-              overflow: "hidden",
-              border: "2px solid black",
-            },
-            inputFileld: {
-              margin: "3px",
-            },
-          }}
-          keepSearchTerm="false"
-          options={allVal.map((fil) => fil.status)}
-          closeOnSelect
-          onSelect={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) => event.includes(data.status));
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          onRemove={(event) => {
-            if (event.length === 0) {
-              return setList(allVal) || setPaged(allVal);
-            } else {
-              let temp = allVal.filter((data) => event.includes(data.status));
-              setPaged(temp) || setList(temp);
-              console.log(event);
-            }
-          }}
-          selectedValues={() => {
-            setList(allVal) || setPaged(allVal);
-          }}
-          showCheckbox
-          showArrow
-          displayValue
-        />
-        <button class="btn btn-primary okay" onClick={toggle8}>
-          Okay
-        </button>
-      </div>
-      <div style={{margin:'1rem'}}>
-      <ExportToExcel csvData={Datas} fileName={Filename}/>
-      </div>
-      <form className="table-data"  onSubmit={handleSubmit}>
-        <Table bordered hover >
-          
-          <thead style={{verticalAlign:'middle',boxSizing:'border-box'}}>
-          
-            <tr style={{background: "brown", color: "white" }}>
-            
-            <th><div style={{width:'5rem'}}>Actions</div></th>
-            <th>
-              <div style={{width:'9rem'}}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle5}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("startdate")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Start-Date
-                </div>
-              </th>
-            
-              <th >
-              <div style={{width:'12rem'}}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle1}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("candiatename")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ marginRight: "1rem" }}
-                ></i>
-                
-                Candidate-Name
-                </div>
-              </th>
-              <th>
-              <div style={{width:'8rem'}}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle3}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("mobile")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Mobile
-                </div>
-              </th>
-              <th>
-              <div style={{width:'10rem'}}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle4}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("technology")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Technology
-                </div>
-              </th>
-              <th>
-              <div style={{width:'9rem'}}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle7}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("resource")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Resource
-                </div>
-              </th>
-              <th>
-              <div style={{width:'8rem'}}>
-              <FaFilter
-                  className="filter"
-                  onClick={toggle8}
-                  style={{
-                    
-                    marginLeft:'0.5rem',
-                    marginRight:'0.5rem'
-                   
-                  }}
-                />
-                <i
-                  onClick={() => sorting("status")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Status
-                </div>
-              </th>
-              
-              <th>
-              <div style={{width:'8rem',overflow:'hidden'}}>
-                <i
-                  onClick={() => sorting("feedback")}
-                  className={
-                    order === "DSC"
-                      ? "fa fa-sort-alpha-asc"
-                      : "fa fa-sort-alpha-desc"
-                  }
-                  style={{ paddingRight: "1rem" }}
-                ></i>
-                Feedback
-                </div>
-              </th>
-
-              <th>
               <div style={{width:'11rem'}}>
               <FaFilter
                   className="filter"

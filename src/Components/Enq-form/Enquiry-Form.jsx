@@ -1,5 +1,5 @@
-import UseForm from "../Hooks/Useform";
-import Validation from "../Utils/Validation";
+import UseForm from "../../Hooks/Useform";
+import Validation from "../../Utils/Validation";
 
 
 
