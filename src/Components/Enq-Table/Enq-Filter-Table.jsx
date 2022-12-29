@@ -156,7 +156,7 @@ const EnqFilterList = () => {
   }))
     const Datas = Datass
     const Filename ='EnquiredData'
-    const filter = ["Confrimed","Demo completed","Demo yet to Schedule","Waiting for response"]
+    const filter = ["Confrimed","Demo completed","Demo Scheduled","Demo yet to Schedule","Waiting for response"]
     console.log(filter)
     const [search, setSearch] = useState("");
     const [allVal, setAllVal] = useState([]);

@@ -113,6 +113,7 @@ import Validation from "../../Utils/Validation";
             <option >Cannot provide support</option>
             <option >Confrimed</option>
             <option >Demo completed</option>
+            <option >Demo Scheduled</option>
             <option >Demo yet to Schedule</option>
             <option >Follow up</option>
             <option >No response</option>
